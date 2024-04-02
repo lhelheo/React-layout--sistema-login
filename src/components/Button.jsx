@@ -1,21 +1,19 @@
-const Button = ({Icon1, Icon2, label}) => {
-    const textColor = 'text-gray-500 mr-2 text-2xl';
-    const buttonStyle = 'flex justify-between w-full pl-6 py-2 mx-auto hover:bg-gray-100';
+const Button = ({ Icon1, Icon2, label, onClick }) => {
+  const iconAndTextClass = 'text-gray-500 mr-2 text-2xl';
+  const buttonStyle = 'flex justify-between w-full pl-6 py-2 mx-auto items-center';
+  const hoverClass = 'group-hover:text-lime-400';
 
   return (
-      <button className={buttonStyle}>
-        <div className='flex'>
-          {Icon1 && <Icon1 className={textColor}/>}
-          <p className={textColor}>{label}</p>
-        </div>
-          {/* <ul>
-            <li>abc</li>
-            <li>def</li>
-            <li>ghi</li>
-          </ul> */}
-          {Icon2 && <Icon2 className={textColor} />}      
-      </button>
-  )
+    <button className={`${buttonStyle} group`} onClick={onClick}>
+
+      <div className='flex items-center'>
+        {Icon1 && <Icon1 className={`${iconAndTextClass} ${hoverClass}`}/>}
+        <p className={`${iconAndTextClass} ${hoverClass} mobile:hidden`}>{label}</p>
+      </div>
+      {Icon2 && <Icon2 className={`${iconAndTextClass} ${hoverClass} mobile:hidden`} />}
+      
+    </button>
+  );
 }
 
-export default Button
+export default Button;

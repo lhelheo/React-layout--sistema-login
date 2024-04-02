@@ -9,15 +9,23 @@ import { Zap } from 'lucide-react';
 import Button from './Button';
 import NavbarEnd from './NavbarEnd';
 import ItemsList from './ItemsList';
+import { useState } from 'react';
 
+const Sidebar = () => { 
+  const [isListVisible, setIsListVisible] = useState(false);
+  const [isListVisible2, setIsListVisible2] = useState(false);
 
-const Sidebar = () => {
-  const adminItems = ["Administrador", "Suporte", "Outro Item"];
+  const toggleListVisibility = () => {
+    setIsListVisible(!isListVisible);
+  };
 
+  const toggleListVisibility2 = () => {
+    setIsListVisible2(!isListVisible2);
+  };
     
   return (
-    <div className='flex flex-col items-start fixed top-0 left-0 z-10 w-64 h-full bg-white border-r border-green-300'>
-      <svg className='my-4 mx-auto' width="170" height="41" viewBox="0 0 170 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className='flex flex-col items-start fixed top-0 left-0 z-10 w-64 h-full bg-white border-r border-green-300 mobile:w-20'>
+      <svg className='my-4 mx-auto mobile:hidden' width="170" height="41" viewBox="0 0 170 41" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_9_50)">
           <path d="M51.8601 28.138H63.8121V24.538H56.1081V10.978H51.8601V28.138Z" fill="#64656B"/>
           <path d="M70.8932 25.738C69.1892 25.738 68.3012 24.25 68.3012 22.018C68.3012 19.786 69.1892 18.274 70.8932 18.274C72.5972 18.274 73.5092 19.786 73.5092 22.018C73.5092 24.25 72.5972 25.738 70.8932 25.738ZM70.9172 28.522C74.8772 28.522 77.4692 25.714 77.4692 22.018C77.4692 18.322 74.8772 15.514 70.9172 15.514C66.9812 15.514 64.3412 18.322 64.3412 22.018C64.3412 25.714 66.9812 28.522 70.9172 28.522Z" fill="#64656B"/>
@@ -36,14 +44,17 @@ const Sidebar = () => {
           </clipPath>
           </defs>
       </svg>
+
+      <svg className='desktop:hidden flex justify-center w-full mt-4' width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95428 0 -9.53674e-06 8.95431 -9.53674e-06 20C-9.53674e-06 31.0457 8.95428 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" fill="#93D500"/>
+      </svg>
+
       <Button Icon1={Home} Icon2={''} label="Início" />
-      <Button Icon1={Users} Icon2={ChevronLeft} label="Clientes" />
-      <ItemsList items={adminItems} /> 
-      {/* Corrigir  */}
+      <Button onClick={toggleListVisibility} Icon1={Users} Icon2={ChevronLeft} label="Clientes" />
+      {isListVisible && <ItemsList items={["Administrador", "Suporte", "Outro Item"]} />}
       <Button Icon1={Grid2X2} Icon2={''} label="Contas" />
-      <Button Icon1={Zap} Icon2={''} label="Gestão" />
-      
-        
+      <Button onClick={toggleListVisibility2} Icon1={Zap} Icon2={ChevronLeft} label="Gestão" />
+      {isListVisible2 && <ItemsList items={["Texto 2", "Exemplo de texto 2", "Testando 2..."]} />}
       <div className='flex flex-col items-center mt-auto w-full'>
         <Button Icon1={Shield} Icon2={''} label="Administrador" />
         <Button Icon1={CircleHelp} Icon2={''} label="Suporte" />

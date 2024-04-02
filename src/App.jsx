@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='navbar-container flex justify-between px-2 pt-3'>
+      <div className='navbar-container flex justify-between ml-64 px-2 pt-3'>
         <Navbar />
         <Sidebar />
       </div>

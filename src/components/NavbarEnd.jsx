@@ -3,18 +3,25 @@ import Button from './Button';
 
 const NavbarEnd = () => {
   return (
-    <div className='flex justify-between pl-4 pb-4 items-center w-full mt-2'>
+    <div>
+    <div className='flex justify-between items-center bg-stone-100 p-1 mb-4 mobile:hidden'>
         <div className='flex items-center'>
-            <div className='bg-gray-300 rounded-3xl p-3'>
+            <div className='bg-gray-300 rounded-full w-10 h-10 m-1 flex items-center justify-center'>
                 <p className='text-xl text-gray-700'>JD</p>    
             </div>
             <div className='flex flex-col pl-3 px-8'>
                 <p className='font-bold text-sm text-gray-700'>John Doe</p>
-                <p className='text-sm text-gray-700'>Admin</p>
+                <p className='text-xs text-gray-700'>Admin</p>
             </div>
         </div>
         <div>
-            <Button Icon1={Bolt} Icon2={''} label="" />
+            <Button Icon1={Bolt} Icon2={''} label=""  />
+        </div>
+
+    </div>
+
+        <div className='desktop:hidden flex justify-center items-center w-full'>
+            <Button Icon1={Bolt} Icon2={''} label=""  />
         </div>
     </div>
   )
