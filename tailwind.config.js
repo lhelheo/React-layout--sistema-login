@@ -9,7 +9,12 @@ export default {
       'mobile': {'max': '750px'},
       'desktop': '751px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        'primary-500': '#93D500', // Cor personalizada primary-500
+      },
+
+    },
   },
   plugins: [],
 }
