@@ -61,27 +61,38 @@ const Sidebar = () => {
 
         <div className='pt-4'>
           
-          <Tooltip text={'Texto'}>
+          <Tooltip className="flex" text={'Redirecionamento para Início'}>
           <Link to="/">
               <Button Icon1={Home} Icon2={''} label="Início" />
             </Link>
           </Tooltip>
 
-          <Tooltip text={'Texto'}>
+          <Tooltip text={'Sessão Clientes'}>
             <Button onClick={toggleListVisibility} Icon1={Users} Icon2={ChevronLeft} label="Clientes" />
           </Tooltip>
           {isListVisible && <ItemsList items={["Administrador", "Suporte", "Outro Item"]} links={["/admin", "/suport", "/others"]} />}
-          <Button Icon1={Grid2X2} Icon2={''} label="Contas" />
-          <Button onClick={toggleListVisibility2} Icon1={Zap} Icon2={ChevronLeft} label="Gestão" />
+
+          <Tooltip text={'Sessão Contas'}>
+            <Button Icon1={Grid2X2} Icon2={''} label="Contas" />
+          </Tooltip>
+
+          <Tooltip text={'Sessão Gestão'}>
+            <Button onClick={toggleListVisibility2} Icon1={Zap} Icon2={ChevronLeft} label="Gestão" />
+          </Tooltip>
           {isListVisible2 && <ItemsList items={["Texto 2", "Exemplo de texto 2", "Testando 2..."]} links={["/texto2", "/extext2", "/test2"]} />}
         </div>
       </div>
       
 
 
-      <div className='flex flex-col items-center w-full'>
-        <Button Icon1={Shield} Icon2={''} label="Administrador" />
-        <Button Icon1={CircleHelp} Icon2={''} label="Suporte" />
+      <div className='flex flex-col  w-full'>
+        <Tooltip text={'Sessão Admin'}>
+          <Button Icon1={Shield} Icon2={''} label="Administrador" />
+        </Tooltip>
+
+        <Tooltip text={'Sessão Suporte'}>
+          <Button Icon1={CircleHelp} Icon2={''} label="Suporte" />
+        </Tooltip>
         <SidebarEnd />
       </div>
     </div>

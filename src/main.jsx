@@ -11,6 +11,7 @@ import Others from './routes/Others'
 import Texto2 from './routes/Texto2'
 import Extext2 from './routes/Extext2'
 import Test2 from './routes/Test2'
+import Login from './routes/Login'
 
 const router = createBrowserRouter([
   { 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: 'test2',
         element: <Test2 /> 
+      },
+      {
+        path: 'login',
+        element: <Login /> 
       },
     ],
   },

@@ -1,11 +1,12 @@
 import { Bolt } from 'lucide-react';
 import Button from './Button';
+import { Tooltip } from './Tooltip';
 
 const SidebarEnd = () => {
   return (
     <div>
-        <div className='flex justify-center items-center bg-stone-100 mb-4 mobile:hidden '>
-            <div className='flex  items-center'>
+        <div className='flex items-center bg-stone-100 mb-4 mobile:hidden '>
+            <div className='flex items-center'>
                 <div className='bg-gray-300 rounded-full w-10 h-10 m-1 flex items-center justify-center'>
                     <p className='text-xl text-gray-700'>JD</p>    
                 </div>
@@ -15,7 +16,9 @@ const SidebarEnd = () => {
                 </div>
             </div>
             <div>
-                <Button Icon1={Bolt} Icon2={''} label=""  />
+                <Tooltip text={'Sessão Configurações'}>
+                    <Button Icon1={Bolt} Icon2={''} label=""  />
+                </Tooltip>
             </div>
         </div>
         <div className='desktop:hidden flex justify-center items-center w-full'> 
