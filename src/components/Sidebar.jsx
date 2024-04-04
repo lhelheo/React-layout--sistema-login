@@ -32,7 +32,7 @@ const Sidebar = () => {
   };
     
   return (
-    <div className='flex flex-col justify-between items-start fixed top-0 left-0 z-10 w-64 h-screen pl-6 bg-white border-r border-green-300 mobile:w-20'>
+    <div className='flex flex-col justify-between items-start fixed top-0 left-0 z-10 w-64 h-screen pl-6 bg-white mobile:w-20'>
 
       <div className='w-full mobile:mt-4'>
         <svg className='my-4 mobile:hidden h-10 w-full'  fill="none" xmlns="http://www.w3.org/2000/svg">

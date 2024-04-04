@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-between ml-64 px-2 pt-3 mobile:ml-20 relative'>
+      <div className='flex justify-between ml-64 sm:ml-20  px-2 pt-3 mobile:ml-20 relative'>
         <Navbar />
         <Sidebar />
         <div className='absolute mt-12 w-full'>
