@@ -19,12 +19,12 @@ const Button = ({ Icon1, Icon2, label, onClick }) => {
   };
 
   return (
-    <button className={`${buttonStyle}  group`} onClick={handleOnClick}>
+    <button className={`${buttonStyle} group`} onClick={handleOnClick}>
       <div className='flex items-center'>
         {Icon1 && <Icon1 className={`${iconAndTextClass} ${selectedClass} ${hoverClass}`}/>}
-        <p className={`${iconAndTextClass} ${hoverClass} ${selectedClass}`}>{label}</p> {/* Aplica a cor primary-500 conforme o estado isSelected */}
+        <p className={`${iconAndTextClass} ${hoverClass} ${selectedClass} mobile:hidden`}>{label}</p> {/* Aplica a cor primary-500 conforme o estado isSelected */}
       </div>
-      {Icon2 && <Icon2 className={`${iconAndTextClass} ${selectedClass} ${hoverClass} ${rotateClass}`} />} {/* Aplica a rotação a Icon2 */}
+      {Icon2 && <Icon2 className={`${iconAndTextClass} ${selectedClass} ${hoverClass} ${rotateClass} mobile:hidden`} />} {/* Aplica a rotação a Icon2 */}
     </button>
   );
 };
