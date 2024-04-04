@@ -5,7 +5,6 @@ import { CircleHelp } from 'lucide-react';
 import { Users } from 'lucide-react';
 import { Grid2X2 } from 'lucide-react';
 import { Zap } from 'lucide-react';
-// import { Bolt } from 'lucide-react';
 import Button from './Button';
 import SidebarEnd from './SidebarEnd';
 import ItemsList from './ItemsList';
