@@ -1,10 +1,4 @@
-import { Home } from 'lucide-react';
-import { ChevronLeft } from 'lucide-react';
-import { Shield } from 'lucide-react';
-import { CircleHelp } from 'lucide-react';
-import { Users } from 'lucide-react';
-import { Grid2X2 } from 'lucide-react';
-import { Zap } from 'lucide-react';
+import { Home , ChevronLeft , Shield, CircleHelp, Users, Grid2X2 , Zap } from 'lucide-react';
 import Button from './Button';
 import SidebarEnd from './SidebarEnd';
 import ItemsList from './ItemsList';
@@ -29,6 +23,8 @@ const Sidebar = () => {
       setIsListVisible(false);
     }
   };
+
+ 
     
   return (
     <div className='flex flex-col justify-between items-start fixed top-0 left-0 z-10 w-64 h-screen pl-6 bg-white mobile:w-20'>
@@ -55,19 +51,28 @@ const Sidebar = () => {
         </svg>
 
         <svg className='desktop:hidden relative right-1 flex h-10 w-10' fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95428 0 -9.53674e-06 8.95431 -9.53674e-06 20C-9.53674e-06 31.0457 8.95428 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" fill="#93D500"/>
+          <path 
+          fill-rule="evenodd" 
+          clip-rule="evenodd" 
+          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95428 0 -9.53674e-06 8.95431 -9.53674e-06 20C-9.53674e-06 
+          31.0457 8.95428 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 
+          20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 
+          22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" 
+          fill="#93D500"
+          />
         </svg>
 
         <div className='pt-4'>
           
           <Tooltip className="flex" text={'Redirecionamento para Início'}>
-          <Link to="/">
+            <Link to="/">
               <Button Icon1={Home} Icon2={''} label="Início" />
             </Link>
           </Tooltip>
 
           <Tooltip text={'Sessão Clientes'}>
-            <Button onClick={toggleListVisibility} Icon1={Users} Icon2={ChevronLeft} label="Clientes" />
+            <Button onClick={toggleListVisibility} Icon1={Users} Icon2={ChevronLeft} label="Clientes" /> 
+            {/* <Button onClick={() => { toggleListVisibility(); toggleColor(); }} Icon1={Users} Icon2={ChevronLeft} label="Clientes" /> */}
           </Tooltip>
           {isListVisible && <ItemsList items={["Administrador", "Suporte", "Outro Item"]} links={["/admin", "/suport", "/others"]} />}
 
@@ -79,12 +84,13 @@ const Sidebar = () => {
             <Button onClick={toggleListVisibility2} Icon1={Zap} Icon2={ChevronLeft} label="Gestão" />
           </Tooltip>
           {isListVisible2 && <ItemsList items={["Texto 2", "Exemplo de texto 2", "Testando 2..."]} links={["/texto2", "/extext2", "/test2"]} />}
+
         </div>
       </div>
       
 
 
-      <div className='flex flex-col  w-full'>
+      <div className='flex flex-col w-full'>
         <Tooltip text={'Sessão Admin'}>
           <Button Icon1={Shield} Icon2={''} label="Administrador" />
         </Tooltip>
@@ -92,6 +98,7 @@ const Sidebar = () => {
         <Tooltip text={'Sessão Suporte'}>
           <Button Icon1={CircleHelp} Icon2={''} label="Suporte" />
         </Tooltip>
+        
         <SidebarEnd />
       </div>
     </div>

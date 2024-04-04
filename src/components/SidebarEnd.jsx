@@ -5,7 +5,7 @@ import { Tooltip } from './Tooltip';
 const SidebarEnd = () => {
   return (
     <div>
-        <div className='flex items-center bg-stone-100 mb-4 mobile:hidden '>
+        <div className='flex items-center bg-stone-100 mb-8 mobile:hidden mr-2 '>
             <div className='flex items-center'>
                 <div className='bg-gray-300 rounded-full w-10 h-10 m-1 flex items-center justify-center'>
                     <p className='text-xl text-gray-700'>JD</p>    
