@@ -10,7 +10,7 @@ const SidebarEnd = () => {
                 <div className='bg-gray-300 rounded-full w-10 h-10 m-1 flex items-center justify-center'>
                     <p className='text-xl text-gray-700'>JD</p>    
                 </div>
-                <div className='flex flex-col px-8'>
+                <div className='flex flex-col mx-8'>
                     <p className='font-bold text-sm text-gray-700'>John Doe</p>
                     <p className='text-xs text-gray-700'>Admin</p>
                 </div>

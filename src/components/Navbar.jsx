@@ -4,6 +4,7 @@ import { Bell } from 'lucide-react';
 import BackButton from './BackButton.jsx';
 import FowardButton from './FowardButton.jsx';
 import RealoadPage from './RealoadPage.jsx';
+import ModalSearchBar from './ModalSearchBar.jsx';
 
 function Navbar() {
 
@@ -13,15 +14,9 @@ function Navbar() {
         <div className={`flex items-center text-gray-500 gap-1 ${colorIconsNavbar}`}>
           <BackButton />
           <FowardButton />
-          <RealoadPage />         
+          <RealoadPage />       
         </div>
-
-        <div className='flex gap-2 items-center p-2 w-96 desktop:w-2/7'> 
-          <input type="text" placeholder="Pesquise aqui..." className='border-2 pl-2 rounded border-gray-400 w-[100%]'/>
-          <CircleHelp strokeWidth={2.5} className={`flex items-center gap-2 ${colorIconsNavbar}`}/>
-          <Bell strokeWidth={2.5} className={`flex items-center gap-2 ${colorIconsNavbar}`}/>
-        </div>
-      
+        <ModalSearchBar />
     </div>
   )
 }
