@@ -5,7 +5,7 @@ const Button = ({ Icon1, Icon2, label, onClick }) => {
   const [isSelected, setIsSelected] = useState(false); // Estado para controlar a aplicação da cor primary-500
 
   // Classes CSS
-  const iconAndTextClass = 'text-gray-500 mr-2 font-semibold text-xl';
+  const iconAndTextClass = 'text-gray-500 mr-2 font-semibold text-md';
   const buttonStyle = 'flex justify-between w-full py-2 mx-auto items-center';
   const hoverClass = 'group-hover:text-primary-500';
   const selectedClass = isSelected ? 'text-primary-500' : ''; // Classe para aplicar a cor primary-500 quando selecionado

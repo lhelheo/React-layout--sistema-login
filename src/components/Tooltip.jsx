@@ -9,7 +9,7 @@ export const Tooltip = ({text, children}) => {
             onMouseLeave={() => setIsTooltipVisible(false)}
         >
             {children}
-            {isTooltipVisible && <div className="tooltip text-xs bg-primary-500 w-min text-white p-1 rounded absolute z-10 -right-20 bottom-0">{text}</div>}
+            {isTooltipVisible && <div className="tooltip p-3 text-sm bg-primary-500 w-min whitespace-nowrap text-white p-1 rounded absolute z-10 -right-32 bottom-0">{text}</div>}
         </div>
     );
 };

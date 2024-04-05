@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CircleHelp } from 'lucide-react';
 import { Bell } from 'lucide-react';
 import { Link } from 'lucide-react';
@@ -22,16 +22,20 @@ const ModalSearchBar = () => {
     setModalOpen(false);
   };
 
+  const iconStyle = 'bg-gray-200 rounded-full text-gray-600 p-1';
+  const iconStyleModal = 'flex items-center gap-2 text-gray-500';
+  const textStyle = 'text-gray-500'
+
   // Lista de objetos com ícone e título
   const items = [
-    { icon: <CircleHelp strokeWidth={2.5} className='bg-slate-200 rounded-full text-white p-1'/>, title: "Ajuda" },
-    { icon: <Bell strokeWidth={2.5} className='bg-gray-200 rounded-full text-white p-1'/>, title: "Notificações" },
-    { icon: <CircleHelp strokeWidth={2.5} className='bg-gray-200 rounded-full text-white p-1'/>, title: "Central" },
+    { icon: <CircleHelp strokeWidth={2.5} className={`${iconStyle}`}/>, title: <p className={`${textStyle}`}>Ajuda</p> },
+    { icon: <Bell strokeWidth={2.5} className={`${iconStyle}`}/>, title: <p className={`${textStyle}`}>Notificações</p> },
+    { icon: <CircleHelp strokeWidth={2.5} className={`${iconStyle}`}/>, title:<p className={`${textStyle}`}>Central</p> },
     // Adicione mais itens conforme necessário
   ];
   
-  const filterSearchBar = 'px-3 py-0.5 bg-gray-50 border border-gray-300 rounded-full shadow-md flex items-center gap-1';
-  const optionsSearchBar = 'hover:bg-gray-100 hover:rounded-md'
+  const filterSearchBar = 'px-3 py-0.5 bg-gray-50 border border-gray-300 rounded-full shadow-md text-gray-500 flex items-center gap-1';
+  const optionsSearchBar = 'hover:bg-gray-100 hover:rounded-md flex justify-start gap-2 items-center w-full '
   // Função para alternar o estado do dropdown
   const toggleDropdown = (index) => {
     if (dropdownOpen === index) {
@@ -45,8 +49,8 @@ const ModalSearchBar = () => {
     <>
       <div className='flex gap-2 items-center p-2 w-96 desktop:w-2/7' onClick={openModal}> 
         <input type="text" placeholder="Pesquise aqui..." className='border-2 pl-2 rounded border-gray-400 w-[100%]'/>
-        <CircleHelp strokeWidth={2.5} className={`flex items-center gap-2 `}/>
-        <Bell strokeWidth={2.5} className={`flex items-center gap-2 `}/>
+        <CircleHelp strokeWidth={2.5} className={`${iconStyleModal}`}/>
+        <Bell strokeWidth={2.5} className={`${iconStyleModal}`}/>
       </div>
       
       {modalOpen && (
@@ -58,7 +62,7 @@ const ModalSearchBar = () => {
               className="w-full p-2 pl-10 border border-gray-300 rounded mb-4 absolute -top-14"
             />
             <Search className='relative -top-16 -right-2 text-gray-500'/>
-            <p className='relative w-max -top-7 -right-3 font-semibold'>Searching for</p>
+            <p className='relative w-max -top-7 -right-3 font-semibold text-gray-700'>Searching for</p>
             <div className='relative -top-5 -right-3 flex gap-2 flex-wrap mr-6'>
               <button className={`${filterSearchBar}`}>Analytics<X  className='w-4'/></button>
               <button className={`${filterSearchBar}`}>Button<X  className='w-4'/></button>
@@ -76,27 +80,27 @@ const ModalSearchBar = () => {
                 </div>
                 {dropdownOpen !== index && (
                   <button onClick={() => toggleDropdown(index)} className="flex gap-6 rounded-full px-1">
-                    <p className='rounded-full shadow-md px-1 mobile:hidden'>1,210 Sales</p> 
+                    <p className='rounded-full text-gray-500 shadow-md px-1 mobile:hidden'>1,210 Sales</p> 
                     <Tally3 className='text-gray-300'/>
                   </button>
                 )}
                 {dropdownOpen === index && (
                   <div className="absolute z-50 top-0 left-0 w-full h-full flex justify-center items-center bg-gray-100 bg-opacity-50">
                   <div className="absolute top-6 right-7 bg-white border border-gray-300 p-2 rounded">
-                    <div className="flex flex-col items-start gap-2">
-                      <div className={`flex justify-start gap-2 items-center w-full ${optionsSearchBar}`}>
+                    <div onClick={closeModal}  className="flex flex-col items-start gap-2">
+                      <div className={`${optionsSearchBar}`}>
                         <Link className='w-3 mx-1'/>
                         <p className='text-sm'>Copy Link</p>
                       </div>
-                      <div className={`flex justify-start gap-2 items-center w-full ${optionsSearchBar}`}>
+                      <div className={`${optionsSearchBar}`}>
                         <SquareArrowOutDownRight className='w-3 mx-1'/>
                         <p className='text-sm'>Save Product</p>
                       </div>
-                      <div className={`flex justify-start gap-2 items-center w-full ${optionsSearchBar}`}>
+                      <div className={`${optionsSearchBar}`}>
                         <ArrowDownToLine className='w-3 mx-1'/>
                         <p className='text-sm'>Go to Product</p>
                       </div>
-                      <div className={`flex justify-start gap-2 items-center w-full ${optionsSearchBar}`}>
+                      <div className={`${optionsSearchBar}`}>
                         <Trash2 className='w-3 mx-1'/>
                         <p className='text-sm'>Remove from List</p>
                       </div>

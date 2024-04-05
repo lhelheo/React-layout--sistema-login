@@ -1,6 +1,4 @@
 import './Navbar.jsx'
-import { CircleHelp } from 'lucide-react';
-import { Bell } from 'lucide-react';
 import BackButton from './BackButton.jsx';
 import FowardButton from './FowardButton.jsx';
 import RealoadPage from './RealoadPage.jsx';

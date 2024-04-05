@@ -24,10 +24,15 @@ const Sidebar = () => {
     }
   };
 
- 
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  // Função para atualizar o item selecionado
+  const selectItem = (item) => {
+    setSelectedItem(item);
+  };
     
   return (
-    <div className='flex flex-col justify-between items-start fixed top-0 left-0 z-10 w-64 h-screen pl-6 bg-white mobile:w-20'>
+    <div className='flex flex-col justify-between items-start fixed top-0 left-0 z-10 w-64  h-screen pl-6 bg-white mobile:w-20'>
 
       <div className='w-full mobile:mt-4'>
         <svg className='my-4 mobile:hidden h-10 w-full'  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,9 +77,10 @@ const Sidebar = () => {
 
           <Tooltip text={'Sessão Clientes'}>
             <Button onClick={toggleListVisibility} Icon1={Users} Icon2={ChevronLeft} label="Clientes" /> 
-            {/* <Button onClick={() => { toggleListVisibility(); toggleColor(); }} Icon1={Users} Icon2={ChevronLeft} label="Clientes" /> */}
           </Tooltip>
-          {isListVisible && <ItemsList items={["Administrador", "Suporte", "Outro Item"]} links={["/admin", "/suport", "/others"]} />}
+          {isListVisible && <ItemsList items={["Administrador", "Suporte", "Outro Item"]} links={["/admin", "/suport", "/others"]}
+          selectItem={selectItem}
+          selectedItem={selectedItem} />}
 
           <Tooltip text={'Sessão Contas'}>
             <Button Icon1={Grid2X2} Icon2={''} label="Contas" />
@@ -83,7 +89,9 @@ const Sidebar = () => {
           <Tooltip text={'Sessão Gestão'}>
             <Button onClick={toggleListVisibility2} Icon1={Zap} Icon2={ChevronLeft} label="Gestão" />
           </Tooltip>
-          {isListVisible2 && <ItemsList items={["Texto 2", "Exemplo de texto 2", "Testando 2..."]} links={["/texto2", "/extext2", "/test2"]} />}
+          {isListVisible2 && <ItemsList items={["Texto 2", "Exemplo de texto 2", "Testando 2..."]} links={["/texto2", "/extext2", "/test2"]} 
+          selectItem={selectItem}
+          selectedItem={selectedItem}/>}
 
         </div>
       </div>
